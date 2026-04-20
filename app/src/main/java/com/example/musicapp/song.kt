@@ -10,6 +10,10 @@ class Song(songName: String, songartist: String, songyear: Int, songduration: St
     var duration: String = ""
     var isFavourite: Boolean = false
 
+    // Secondary constructor for new songs
+    constructor(songName: String, songduration: String) :
+            this(songName, "", 0, songduration)
+
     // Secondary constructor to include favorite status
     constructor(
         songName: String,

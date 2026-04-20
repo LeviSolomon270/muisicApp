@@ -21,15 +21,18 @@ class MainActivity : AppCompatActivity() {
         // Calling the Song class for song objects
         val song1 = Song("Ordinary", "Alex Warren", 2024, "2.5")
         val song2 = Song("Swim", "BTS", 2021, "3.5")
-        // Fixed: Added missing year and duration parameters
         val song3 = Song("So Easy", "Olivia Dean", 2023, "3.0")
+        
+        // Creating songs using the new secondary constructor
+        val song4 = Song("fear of flying", "3:45")
+        val song5 = Song("The Days", "3:53")
 
-        // Creating array to hold songs
-        val songs = arrayOf(song1, song2, song3)
+        // Creating array to hold all songs
+        val songs = arrayOf(song1, song2, song3, song4, song5)
 
         // Loop through the songs and build the display string
         for (song in songs) {
-            songDisplay += "${song.name} by ${song.artist}\n"
+            songDisplay += "${song.name} by ${song.artist} (${song.year})\n"
         }
 
         // Set the final string to the TextView
