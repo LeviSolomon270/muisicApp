@@ -2,47 +2,46 @@ package com.example.musicapp
 
 import android.util.Log
 
-class song (songName : String, songartist : String, songyear : Int, songduration : String){
+class Song(songName: String, songartist: String, songyear: Int, songduration: String) {
 
-    var name : String =""
-    var artist : String=""
-    var year : Int = 0
-    var duration : String =""
- constructor(songName : String, songartist : this( : this()songName, songartist,0,")
-    String, songyear : Int, songduration : String songfavourite : Boolean)
+    var name: String = ""
+    var artist: String = ""
+    var year: Int = 0
+    var duration: String = ""
+    var isFavourite: Boolean = false
 
-    // Constructor
-    init{
+    // Secondary constructor to include favorite status
+    constructor(
+        songName: String,
+        songartist: String,
+        songyear: Int,
+        songduration: String,
+        songfavourite: Boolean
+    ) : this(songName, songartist, songyear, songduration) {
+        this.isFavourite = songfavourite
+    }
+
+    init {
         name = songName
         artist = songartist
         year = songyear
         duration = songduration
     }
 
-
-
-    fun Play(){
-    Log.v("Song", "$name Playing now")
-
+    fun play() {
+        Log.v("Song", "$name: Playing now")
     }
 
-    fun Pause(){
-        Log.v("Song", "$name Playing now")
-
-        fun Stop(){
-            Log.v("Song", "$name Playing now")
-        }
-
-        fun Favourite():Boolean{
-            Log.v("Song", "$name Playing now")
-            return true
-        }
-
-
-
-
+    fun pause() {
+        Log.v("Song", "$name: Paused")
     }
 
+    fun stop() {
+        Log.v("Song", "$name: Stopped")
+    }
 
-
+    fun favourite(): Boolean {
+        Log.v("Song", "$name favourite status: $isFavourite")
+        return isFavourite
+    }
 }
