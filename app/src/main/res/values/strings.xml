@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MusicApp</string>
+    <string name="screen_title">Now Playing</string>
+    <string name="screen_subtitle">Your favorite tracks</string>
 </resources>
